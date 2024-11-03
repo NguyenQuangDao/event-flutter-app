@@ -1,3 +1,5 @@
 {
-    "appTitle": "Quản lý sự kiện"
+    "appTitle": "Quản lý sự kiện",
+    "addEvent": "Them su kien",
+    "eventDetail": "Chi tiet su kien"
 }
