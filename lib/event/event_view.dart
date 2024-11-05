@@ -20,7 +20,6 @@ class _EventViewState extends State<EventView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     calendarController.view = CalendarView.day;
   }
@@ -92,9 +91,8 @@ class _EventViewState extends State<EventView> {
           }
         },
         onTap: (details) {
-          if (details.targetElement == CalendarElement.calendarCell) {
+          if (details.targetElement == CalendarElement.appointment) {
             final EventModel event = details.appointments!.first;
-            print(event);
             Navigator.of(context).push(MaterialPageRoute(
               builder: (context) {
                 return EvnetDetailView(event: event);

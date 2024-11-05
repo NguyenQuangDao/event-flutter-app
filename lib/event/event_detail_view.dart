@@ -3,6 +3,7 @@ import 'package:event_app/event/event_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+// ignore: must_be_immutable
 class EvnetDetailView extends StatefulWidget {
   EventModel event;
   EvnetDetailView({super.key, required this.event});
@@ -18,7 +19,6 @@ class _EvnetDetailViewState extends State<EvnetDetailView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     subjectControler.text = widget.event.subject;
     notesControler.text = widget.event.notes ?? "";
@@ -101,14 +101,14 @@ class _EvnetDetailViewState extends State<EvnetDetailView> {
                     });
                   }),
             ),
-            if (!widget.event.isAllDay) ...{
+            if (!widget.event.isAllDay) ...[
               const SizedBox(height: 16),
               ListTile(
                 title: Text('Bat dau: ${widget.event.fomatedStartTimeString}'),
                 trailing: Icon(Icons.today_outlined),
                 onTap: () => _pickDateTime(isStart: true),
               ),
-              const SizedBox(height: 16),
+              // const SizedBox(height: 16),
               ListTile(
                 title: Text('Ket thuc: ${widget.event.fomatedEndTimeString}'),
                 trailing: Icon(Icons.today_outlined),
@@ -133,7 +133,7 @@ class _EvnetDetailViewState extends State<EvnetDetailView> {
                       onPressed: _saveEvent, label: const Text('Luu su kien')),
                 ],
               )
-            }
+            ]
           ],
         ),
       ),
